@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block page_content %}
+    <div class="container">
+        {% for product in products %}
+        <div class='container-item'>
+            <img src="{{product.image.url}}" alt="{{product.name}}">
+            <div class="prod_desc">
+                <h1>
+                    {{product.name}}
+                </h1>
+                <span>
+                    {{product.description|slice:"50"|default:"..."}}...
+                </span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock page_content %}
