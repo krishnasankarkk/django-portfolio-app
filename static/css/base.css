@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Sofia-Regular';
+    src: url('/static/font/Sofia-Regular.ttf');
+}
+body {
+    font-family: 'Sofia-Regular';
+    background-color: rgb(255, 139, 139);
+    padding: 1%;
+}
+/* .filters {
+    width: 30vw;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    background-color: aqua;
+    z-index: 0;
+} */
+.container {
+    /* width: 70vw; */
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-item {
+    height: 30%;
+    width: 30%;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+.container-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px 0 rgb(0, 0, 0);
+}
+.container-item img {
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.container-item .prod_desc {
+    padding: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  
+    .container-item {
+        height: 40%;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  
+    .container-item {
+        height: 100%;
+        width: 100%;
+    }
+}

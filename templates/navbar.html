@@ -1,0 +1,36 @@
+{% load static %}
+{% block navbar %}
+    <div class="navbar">
+        <span class='navbar-logo' onclick="location.href = '/'">
+            <img src="{% static 'images/logo.jpg' %}" alt="Shoppin Logo">
+        </span>
+        <span class='navbar-item'  onclick="location.href = '/products'">
+            Products
+        </span>
+        <span class='navbar-item'  onclick="location.href = '/categories'">
+            Categories
+        </span>
+        <span class='navbar-item'  onclick="location.href = '/offers'">
+            Offers
+        </span>
+        <span class='navbar-item'  onclick="location.href = '/gallery'">
+            Gallery
+        </span>
+        <span class='navbar-item'  onclick="location.href = '/blogs'">
+            Blogs
+        </span>
+        <span class='navbar-item'>
+            <input type="text" placeholder='search' autocomplete='off'>
+        </span>
+        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+            person
+        </span>
+        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+            favorite
+        </span>
+        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+            shopping_cart
+        </span>
+    </div>
+   
+{% endblock navbar %}

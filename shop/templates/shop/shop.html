@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block page_content %}
-    <div class="container">
+        <div class="container">
         {% for product in products %}
         <div class='container-item'>
             <img src="{{product.image.url}}" alt="{{product.name}}">
@@ -9,7 +9,7 @@
                     {{product.name}}
                 </h1>
                 <span>
-                    {{product.description|slice:"50"|default:"..."}}...
+                    ₹{{product.price}}
                 </span>
             </div>
         </div>
