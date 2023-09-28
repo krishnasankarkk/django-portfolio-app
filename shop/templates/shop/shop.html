@@ -1,18 +1,43 @@
 {% extends "base.html" %}
 {% block page_content %}
         <div class="container">
-        {% for product in products %}
-        <div class='container-item'>
-            <img src="{{product.image.url}}" alt="{{product.name}}">
-            <div class="prod_desc">
-                <h1>
-                    {{product.name}}
-                </h1>
-                <span>
-                    ₹{{product.price}}
-                </span>
+            <div class="product-filters">
+                <h4>Filters</h4>
+                <label class="category">
+                    <input type="radio" id="1" value="1" name="category" onchange="location.href = '?category=1'">All
+                </label>
+                <label class="category">
+                    <input type="radio" id="2" value="2" name="category" onchange="location.href = '?category=2'">Shirts
+                </label>
+                <label class="category">
+                    <input type="radio" id="3" value="3" name="category" onchange="location.href = '?category=3'">Shoes
+                </label>
+            </div>
+            <div class="product">
+                {% for product in products %}
+                <div class='container-item'>
+                    <img src="{{product.image.url}}" alt="{{product.name}}">
+                    <div class="prod_desc">
+                        <h1>
+                            {{product.name}}
+                        </h1>
+                        <h4>
+                            {{product.category}}
+                        </h4>
+                        <span class='price'>
+                            <b>₹ {{product.price}}</b>
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-    </div>
+        <script>
+            // JavaScript to handle deselect option
+            const radioButtons = document.querySelectorAll('input[type="radio"][name="category"]');
+            var category = String("{{ category }}");
+            console.log(category)
+            const select = document.getElementById(category);
+            select.checked = true;
+        </script>
 {% endblock page_content %}

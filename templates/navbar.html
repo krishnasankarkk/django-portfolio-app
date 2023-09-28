@@ -4,6 +4,9 @@
         <span class='navbar-logo' onclick="location.href = '/'">
             <img src="{% static 'images/logo.jpg' %}" alt="Shoppin Logo">
         </span>
+        <span class='navbar-search'>
+            <input type="text" placeholder='Search for products' autocomplete='off'>
+        </span>
         <span class='navbar-item'  onclick="location.href = '/products'">
             Products
         </span>
@@ -19,16 +22,13 @@
         <span class='navbar-item'  onclick="location.href = '/blogs'">
             Blogs
         </span>
-        <span class='navbar-item'>
-            <input type="text" placeholder='search' autocomplete='off'>
-        </span>
-        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+        <span class="material-symbols-outlined navbar-icon" onclick="location.href = '/profile'">
             person
         </span>
-        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+        <span class="material-symbols-outlined navbar-icon" onclick="location.href = '/profile'">
             favorite
         </span>
-        <span class="material-symbols-outlined" onclick="location.href = '/profile'">
+        <span class="material-symbols-outlined navbar-icon" onclick="location.href = '/profile'">
             shopping_cart
         </span>
     </div>

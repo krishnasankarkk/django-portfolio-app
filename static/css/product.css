@@ -1,0 +1,89 @@
+.container {
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+.product-filters {
+    background-color: rgb(255, 215, 127);
+    width: 30vw;
+    height: 30vh;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-right: 1%;
+    position: sticky;
+    
+}
+.product {
+    background-color: rgb(255, 215, 127);
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 1%;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 20px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(87, 87, 87);
+    border-radius: 20px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 237, 195);
+    border-radius: 10px;
+}
+.category {
+    cursor: pointer;
+}
+.container-item {
+    height: 62vh;
+    width: 19vw;
+    margin: 1%;
+    background-color: rgb(255, 254, 253);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform .1s;
+}
+.container-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px 0 rgb(0, 0, 0);
+}
+.container-item img {
+    height: 30vh;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.container-item .prod_desc {
+    padding: 10px;
+}
+.container-item .price {
+    color: rgb(146, 0, 0);
+}
+
+@media screen and (max-width: 1000px) {
+  
+    .container-item {
+        height: 40%;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  
+    .container-item {
+        height: 100%;
+        width: 100%;
+    }
+}

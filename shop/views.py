@@ -2,8 +2,14 @@ from django.shortcuts import render
 from .models import Product
 
 def shop(request):
+    prod_category = request.GET.get('category')
+    if prod_category!='1':
+        products = Product.get_all_products_by_categoryid(prod_category)
+    else:
+        products = Product.get_all_products
     context = {
-        'products': Product.objects.all()
+        'products': products,
+        'category':prod_category
     }
     return render(request, "shop/shop.html", context)
 
