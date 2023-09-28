@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'shoppingonline.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'shoppin',
-#         'USER': 'postgres',
-#         'PASSWORD': '1234',
-#         'HOST': 'localhost',  # Set to the hostname where your database is running, typically 'localhost'.
-#         'PORT': '5432',  # Leave empty to use the default PostgreSQL port (5432).
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'MBSpHTIiiI5KvOrN0OiT',
+        'HOST': 'containers-us-west-117.railway.app',  # Set to the hostname where your database is running, typically 'localhost'.
+        'PORT': '7606',  # Leave empty to use the default PostgreSQL port (5432).
+    }
+}
 
 
 # Password validation
