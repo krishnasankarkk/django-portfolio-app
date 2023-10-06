@@ -99,9 +99,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'MBSpHTIiiI5KvOrN0OiT',
-        'HOST': 'containers-us-west-117.railway.app',  # Set to the hostname where your database is running, typically 'localhost'.
-        'PORT': '7606',  # Leave empty to use the default PostgreSQL port (5432).
+        'PASSWORD': '8thmGiEv9t1mhPlcbBOZ',
+        'HOST': 'containers-us-west-90.railway.app',  # Set to the hostname where your database is running, typically 'localhost'.
+        'PORT': '6943',  # Leave empty to use the default PostgreSQL port (5432).
     }
 }
 
