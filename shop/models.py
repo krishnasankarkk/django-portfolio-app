@@ -1,5 +1,24 @@
 from django.db import models
 
+
+class Menu(models.Model):
+    name = models.CharField(max_length=50)
+    has_parent = models.BooleanField(default=False)
+    
+        
+    def __str__(self):
+        return self.name
+ 
+class ChildMenu(models.Model):
+    name = models.CharField(max_length=50)
+    parent = models.ForeignKey(Menu, on_delete=models.CASCADE, default=None)
+    
+    def get_all_menus_by_parentid(id):
+        return ChildMenu.objects.filter(parent=id)
+    
+    def __str__(self):
+        return self.name
+    
 class Category(models.Model):
     name= models.CharField(max_length=50)
 

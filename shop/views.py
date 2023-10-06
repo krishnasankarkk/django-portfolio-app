@@ -1,16 +1,18 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Category
 from django.http import HttpResponse
-
+    
 def shop(request):
     prod_category = request.GET.get('category')
     if prod_category!='1':
         products = Product.get_all_products_by_categoryid(prod_category)
     else:
         products = Product.get_all_products
+    categories = Category.objects.all()
     context = {
         'products': products,
-        'category':prod_category
+        'category':prod_category,
+        'categories':categories,
     }
     return render(request, "shop/shop.html", context)
     # return HttpResponse("Django deployed.")

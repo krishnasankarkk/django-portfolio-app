@@ -7,7 +7,24 @@
         <span class='navbar-search'>
             <input type="text" placeholder='Search for products' autocomplete='off'>
         </span>
-        <span class='navbar-item'  onclick="location.href = '/products'">
+        {% for menu in menus %}
+            {% if  menu.child %}
+                <div class='navbar-item'  onclick="location.href = '/{{menu.parent|lower}}'">
+                    {{menu.parent}}
+                    <div class="menu-options">
+                        {% for item in  menu.child%}
+                            <span class='menu-options-item' value="{{item.id}}">{{item.name}}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <span class='navbar-item'  onclick="location.href = '/{{menu.parent|lower}}'">
+                    {{menu.parent}}
+                </span>
+            {% endif %}
+            
+        {% endfor %}
+        {% comment %} <span class='navbar-item'  onclick="location.href = '/products'">
             Products
         </span>
         <span class='navbar-item'  onclick="location.href = '/categories'">
@@ -21,7 +38,7 @@
         </span>
         <span class='navbar-item'  onclick="location.href = '/blogs'">
             Blogs
-        </span>
+        </span> {% endcomment %}
         <span class="material-symbols-outlined navbar-icon" onclick="location.href = '/profile'">
             person
         </span>

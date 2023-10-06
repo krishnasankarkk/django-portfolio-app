@@ -3,15 +3,11 @@
         <div class="container">
             <div class="product-filters">
                 <h4>Filters</h4>
-                <label class="category">
-                    <input type="radio" id="1" value="1" name="category" onchange="location.href = '?category=1'">All
-                </label>
-                <label class="category">
-                    <input type="radio" id="2" value="2" name="category" onchange="location.href = '?category=2'">Shirts
-                </label>
-                <label class="category">
-                    <input type="radio" id="3" value="3" name="category" onchange="location.href = '?category=3'">Shoes
-                </label>
+                {% for category in categories %}
+                    <label class="category">
+                        <input type="radio" id="{{category.id}}" value="{{category.id}}" name="category" onchange="location.href = '?category={{category.id}}'">{{category.name}}
+                    </label>
+                {% endfor %}
             </div>
             <div class="product">
                 {% for product in products %}
